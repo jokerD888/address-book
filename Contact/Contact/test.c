@@ -30,7 +30,12 @@ int main(void)
 	{
 		menu();
 		printf("请选择:>");
-		scanf("%d", &input);
+		if (!scanf("%d", &input))
+		{
+			printf("您输入格式有误，请重新开始\n");
+			return 0;
+		}
+
 		switch (input)
 		{
 		case ADD:
